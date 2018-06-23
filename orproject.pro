@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT       += webengine webenginewidgets webchannel
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = orproject
@@ -24,6 +24,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mapwidget.cpp \
+    optionswidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    mapwidget.h \
+    optionswidget.h
+
+FORMS +=
+
+RESOURCES += \
+    map.qrc

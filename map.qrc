@@ -1,1 +1,6 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/yuquanmap">
+        <file alias="baidumap">baidumap.html</file>
+        <file>qwebchannel.js</file>
+    </qresource>
+</RCC>
