@@ -36,6 +36,8 @@ void MainWindow::start_clicked(){
     opw->cur_pos_show->setVisible(true);
     opw->cur_pos_label->setVisible(true);
     opw->search->setVisible(true);
+    //this->mapw->p=this->mapw->yuquanmap->grab(QRect(0,0,1000,1000));
+    //this->mapw->p.save("a.png","png");
 }
 
 void MainWindow::search_clicked(){

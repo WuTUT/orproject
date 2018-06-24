@@ -11,6 +11,7 @@ MapWidget::MapWidget(QWidget *parent) : QWidget(parent)
     yuquanmap->page()->setWebChannel(channel);
     yuquanmap->page()->load(QUrl("file:///D:/Documents/QTcode/orproject/baidumap.html"));
 
+
     //yuquanmap->setUrl(QUrl("file:///D:/Documents/QTcode/orproject/baidumap.html"));
     yuquanmap->show();
     yuquanmap->setMaximumSize(1000,1000);

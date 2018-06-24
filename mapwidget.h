@@ -7,6 +7,7 @@
 #include <QWebChannel>
 #include <QString>
 #include <QMouseEvent>
+#include <QPixmap>
 class MapWidget : public QWidget
 {
     Q_OBJECT
@@ -15,6 +16,7 @@ public:
     ~MapWidget();
 public:
     QWebEngineView* yuquanmap;
+    QPixmap p;
     int pixx;
     int pixy;
 protected:
