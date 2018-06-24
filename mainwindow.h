@@ -7,6 +7,7 @@
 #include "optionswidget.h"
 #include <QLayout>
 #include <QString>
+
 class MainWindow : public QWidget
 {
     Q_OBJECT
@@ -18,6 +19,7 @@ public:
     double cur_lat;
 public:
     MainWindow(QWidget *parent = 0);
+
 public slots:
     void start_clicked();
     void search_clicked();

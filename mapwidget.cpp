@@ -1,5 +1,6 @@
 ﻿#include "mapwidget.h"
-
+#include <iostream>
+using namespace std;
 MapWidget::MapWidget(QWidget *parent) : QWidget(parent)
 {
 
@@ -15,7 +16,14 @@ MapWidget::MapWidget(QWidget *parent) : QWidget(parent)
     yuquanmap->setMaximumSize(1000,1000);
     yuquanmap->setMinimumSize(1000,1000);
 
-
+    pixx=0;
+    pixy=0;
 }
-
-
+void MapWidget::getpixel(int x, int y){
+    this->pixx=x;
+    this->pixy=y;
+    cout<<(this->pixx)<<" , "<<(this->pixy)<<endl;
+}
+MapWidget::~MapWidget(){
+    this->disconnect();
+}

@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(opw->search,&QPushButton::clicked,this,&MainWindow::search_clicked);
 
     mainLayout->setMargin(0);
-    cur_lng=120;
-    cur_lat=2.0;
+    cur_lng=120.130782;
+    cur_lat=30.271989;
 
     this->setLayout(mainLayout);
 
@@ -40,9 +40,9 @@ void MainWindow::start_clicked(){
 
 void MainWindow::search_clicked(){
     QString tmppos;
-    tmppos=QString::number(cur_lat);
+    tmppos=QString::number(cur_lng);
     tmppos.append(",");
-    tmppos.append(QString::number(cur_lng));
+    tmppos.append(QString::number(cur_lat));
     opw->cur_pos_show->setText(tmppos);
-    mapw->yuquanmap->page()->runJavaScript(QString("setPos('%1','%2');").arg(cur_lng,cur_lat));
+    mapw->yuquanmap->page()->runJavaScript(QString("setPos('%1','%2');").arg(mapw->pixx).arg(mapw->pixy));
 }

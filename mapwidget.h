@@ -5,22 +5,25 @@
 #include <QUrl>
 #include <QWebEngineView>
 #include <QWebChannel>
-#include <QPaintEvent>
 #include <QString>
+#include <QMouseEvent>
 class MapWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit MapWidget(QWidget *parent = 0);
-
+    ~MapWidget();
 public:
     QWebEngineView* yuquanmap;
+    int pixx;
+    int pixy;
+protected:
 
 
 signals:
 
 public slots:
-
+    void getpixel(int x,int y);
 };
 
 #endif // MAPWIDGET_H
