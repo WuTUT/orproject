@@ -3,5 +3,6 @@
         <file alias="baidumap">baidumap.html</file>
         <file>qwebchannel.js</file>
         <file>msgutils.js</file>
+        <file>searchicon.png</file>
     </qresource>
 </RCC>
