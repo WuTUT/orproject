@@ -24,6 +24,7 @@ MapWidget::MapWidget(QWidget *parent) : QWidget(parent)
 void MapWidget::getpixel(int x, int y){
     this->pixx=x;
     this->pixy=y;
+
     cout<<(this->pixx)<<" , "<<(this->pixy)<<endl;
 }
 MapWidget::~MapWidget(){

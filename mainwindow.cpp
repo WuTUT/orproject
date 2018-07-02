@@ -1,9 +1,10 @@
 ﻿#include "mainwindow.h"
-#include <iostream>
+
 #include <string>
 #include <QDebug>
 #pragma execution_character_set("utf-8")
-using namespace std;
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
@@ -27,24 +28,91 @@ MainWindow::MainWindow(QWidget *parent)
     this->setLayout(mainLayout);
 
 
-
 }
+
 
 void MainWindow::start_clicked(){
 
-    cout<<"start_clicked"<<endl;
+    qDebug()<<"start clicked";
     opw->cur_pos_show->setVisible(true);
     opw->cur_pos_label->setVisible(true);
     opw->search->setVisible(true);
     //this->mapw->p=this->mapw->yuquanmap->grab(QRect(0,0,1000,1000));
     //this->mapw->p.save("a.png","png");
+    int louzuobiao[12][2]={
+        {711,	387},
+        {676,	497},
+        {585,	300},
+        {508,	445},
+        {466,	274},
+        {406,	415},
+        {266,	151},
+        {233,	382},
+        {552,	772},
+        {465,	714},
+        {850,	410},
+        {796,	560},
+    };
+    int zhandian[5][2]={
+        {692,   462},
+        {514,   719},
+        {529,   401},
+        {523,   277},
+        {257,   176}
+    };
+    for (int i=0;i<=5;i++){
+     mapw->yuquanmap->page()->runJavaScript(QString("setPos('%1','%2');").arg(zhandian[i][0]).arg(zhandian[i][1]));
+    }
+
 }
 
 void MainWindow::search_clicked(){
     QString tmppos;
-    tmppos=QString::number(cur_lng);
+    tmppos=QString::number(mapw->pixx);
     tmppos.append(",");
-    tmppos.append(QString::number(cur_lat));
+    tmppos.append(QString::number(mapw->pixy));
     opw->cur_pos_show->setText(tmppos);
-    mapw->yuquanmap->page()->runJavaScript(QString("setPos('%1','%2');").arg(mapw->pixx).arg(mapw->pixy));
+    int louzuobiao[12][2]={
+        {711,	387},
+        {676,	497},
+        {585,	300},
+        {508,	445},
+        {466,	274},
+        {406,	415},
+        {266,	151},
+        {233,	382},
+        {552,	772},
+        {465,	714},
+        {850,	410},
+        {796,	560},
+    };
+    int zhandian[5][2]={
+        {692,   462},
+        {514,   719},
+        {529,   401},
+        {523,   277},
+        {257,   176}
+    };
+    double dis[12];
+    for(int i=0;i<12;i++){
+        dis[i]=(mapw->pixx-louzuobiao[i][0])*(mapw->pixx-louzuobiao[i][0])+(mapw->pixy-louzuobiao[i][1])*(mapw->pixy-louzuobiao[i][1]);
+
+    }
+    /*
+    for(int i=0;i<12;i++){
+        qDebug()<<dis[i];
+    }*/
+    int ti=0;
+    double mindis=dis[0];
+    for(int i=1;i<12;i++){
+        if(dis[i]<mindis)
+        {mindis=dis[i];
+         ti=i;
+        }
+
+    }
+    //qDebug()<<ti;
+    int kn[12]={1,1,4,3,4,3,5,5,2,2,1,1};
+
+    mapw->yuquanmap->page()->runJavaScript(QString("setAni('%1','%2');").arg(zhandian[kn[ti]-1][0]).arg(zhandian[kn[ti]-1][1]));
 }

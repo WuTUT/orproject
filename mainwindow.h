@@ -7,7 +7,6 @@
 #include "optionswidget.h"
 #include <QLayout>
 #include <QString>
-
 class MainWindow : public QWidget
 {
     Q_OBJECT

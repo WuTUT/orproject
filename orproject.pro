@@ -38,3 +38,5 @@ RESOURCES += \
     map.qrc \
     qdarkstyle/style.qrc
 
+DISTFILES +=
+
